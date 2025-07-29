@@ -15,3 +15,4 @@ Repositório para os desafio do bootcamp da vivo
 * Estruturas condicionais ✅
 * Strings ✅
 * Desafio 2 - Sistema Bancário ✅
+* Desafio 3 - Otimizando Sistema Bancário ✅
