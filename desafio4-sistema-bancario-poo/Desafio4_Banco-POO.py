@@ -156,18 +156,11 @@ class Conta:
         return False
 
 class ContaCorrente(Conta):
-    def __init__(self, limite, limite_saques, numero_saques, agencia, numero, cliente):
+    def __init__(self, agencia, numero, cliente, limite = 500, limite_saques = 3, numero_saques = 0):
         self._limite = limite
         self._limite_saques = limite_saques
         self._numero_saques = numero_saques
         super().__init__(agencia, numero, cliente)
-
-    @classmethod
-    def nova_conta(cls, numero, cliente):
-        conta = ContaCorrente(500, 3, 0, '1', numero, cliente)
-        cliente.adicionar_conta(conta)
-        print(f"Conta {int(conta._numero):04d} criada para o usuario {cliente.nome}")
-        return conta
 
     def sacar(self, valor):
         if valor > self.saldo: #Testa se tem saldo suficiente
@@ -186,6 +179,15 @@ class ContaCorrente(Conta):
             return True
         else:
             print("Valor inválido.")
+'''
+    @classmethod
+    def nova_conta(cls, numero, cliente):
+        conta = ContaCorrente('1', numero, cliente)
+        cliente.adicionar_conta(conta)
+        print(f"Conta {int(conta._numero):04d} criada para o usuario {cliente.nome}")
+        return conta
+'''
+
    
 
 def entrar(clientes):
@@ -260,13 +262,9 @@ def extrato(conta):
     print(f"\n    Saldo:     R$ {conta.saldo}")
     print("==========================================")
 
-class Menu(ABC):
+class Menu:
     def __init__(self):
         self._opcao = 0
-
-    @abstractmethod
-    def display_menu(self):
-        pass
 
 class MenuUsuario(Menu):
     def __init__(self):
