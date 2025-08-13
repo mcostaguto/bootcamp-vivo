@@ -17,3 +17,4 @@ Repositório para os desafio do bootcamp da vivo
 * Desafio 2 - Sistema Bancário ✅
 * Desafio 3 - Otimizando Sistema Bancário ✅
 * Desafio 4 - Sistema Bancário - POO ✅
+* Desafio 5 - Sistema Bancário - Iteradores ✅
